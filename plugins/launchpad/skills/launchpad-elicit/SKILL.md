@@ -73,14 +73,23 @@ Each persona has a fixed perspective. They speak to each other, not to the user.
    - **Jordan (QA):** "I'm Jordan. I look for what could go wrong and what we're not covering."
    - **Alex (User):** "I'm Alex. I represent the person who'll actually use this — I keep it real."
 3. Run 2–3 rounds of discussion between personas. Each round surfaces different aspects:
-   - Round 1: What are we building and for whom? (PM + User)
-   - Round 2: How does it work, what could go wrong? (Designer + Tech Lead + QA)
+   - Round 1: What are we building and for whom? (Maya + Alex)
+   - Round 2: How does it work, what could go wrong? (Leo + Sam + Jordan)
    - Round 3: What are the limits, what's the priority? (All)
-3. Keep each persona's lines short and direct. No long monologues.
-4. After each round, pause and ask the user: "Anything to add or correct before we continue?"
-5. After all rounds, summarize what the team agreed on.
-6. Map the summary onto `templates/REFERENCE.md` sections.
-7. Show the filled brief to the user and confirm: "Does this capture what the team worked out?"
+4. Keep each persona's lines short and direct. No long monologues.
+5. After each round, pause and ask the user: "Anything to add or correct before we continue?"
+6. After all rounds, brain presents two things:
+   - **Summary** — one paragraph of what the team agreed on.
+   - **Suggested approach** — one concrete direction the team leans toward. Name who pushed for it.
+     Example: "The team recommends starting with the core flick mechanic only. Maya flagged scope creep as the main risk. Sam confirmed pure HTML/CSS/JS is viable if physics stays simple."
+   Then ask: "Do you want to go with this, adjust the approach, or ask someone a question?"
+7. **Open floor — user addresses personas directly:**
+   - User can ask any persona by name: "Sam, is the physics really doable?" / "Jordan, what about X?"
+   - Each persona responds in character, 1–3 sentences. Others react if relevant.
+   - No time limit. Continue until user says they're done.
+   - When ready: "Should I write the brief now?"
+8. Map final agreed content onto `templates/REFERENCE.md` sections.
+9. Show filled brief. Confirm: "Does this capture it, or change anything?"
 
 ### Persona Voice Examples
 
