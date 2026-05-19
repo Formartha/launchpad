@@ -34,69 +34,17 @@ Run only the selected agents. Always in order: Functional → Non-Functional →
 ---
 
 ## Agent 1: Functional
-
-**What it tests:** Does the feature do what FEATURE.md says it should?
-
-Read `## Test Scenarios` in `.launchpad/features/[feature-name]/FEATURE.md`.
-
-For each scenario:
-- Write a test that directly verifies it.
-- Run it.
-- Report: `✓ [scenario]` or `✗ [scenario] — [what failed]`
-
-**On failure:**
-- Explain in plain language what broke.
-- Ask: "Fix it now, or note for later?"
-- Fix → fix, re-run, confirm pass.
-- Note → add note to FEATURE.md under that scenario.
-
----
+Follow all checks defined in the `launchpad-test-functional` skill.
+Read `## Test Scenarios` from FEATURE.md as the baseline scenario list.
 
 ## Agent 2: Non-Functional
-
-**What it tests:** How the feature performs, feels, and behaves under real conditions.
-
-Run checks across these dimensions — skip any that don't apply to the feature:
-
-| Check | What to verify |
-|---|---|
-| **Performance** | Response time under normal load. Flag anything obviously slow. |
-| **Usability** | Is the flow clear to a non-developer? Any confusing steps or dead ends? |
-| **Accessibility** | Basic a11y: keyboard nav, labels, contrast, screen reader hints. |
-| **Reliability** | Does it behave consistently across repeated runs? |
-| **Error handling** | What happens on bad input, missing data, network failure? Is the error clear? |
-
-For each check:
-- State what you tested.
-- Report: `✓ [check]` or `✗ [check] — [issue found]`
-- Flag severity: low / medium / high.
-
-**On high-severity failure:** Ask user whether to fix now or continue.
-
----
+Follow all checks defined in the `launchpad-test-nonfunctional` skill.
+Skip checks that don't apply to this feature's context.
 
 ## Agent 3: Security
-
-**What it tests:** Common vulnerabilities and unsafe patterns in the implementation.
-
-Run checks relevant to the feature's stack and inputs — skip any that don't apply:
-
-| Check | What to verify |
-|---|---|
-| **Input validation** | All user inputs sanitized. No raw input passed to commands, queries, or eval. |
-| **Authentication** | Protected routes/functions require auth. No auth bypass possible. |
-| **Authorization** | Users can only access/modify their own data. No privilege escalation. |
-| **Injection** | No SQL, shell, or template injection vectors. Parameterized queries used. |
-| **Sensitive data** | No secrets, tokens, or PII logged or exposed in responses. |
-| **Dependencies** | No known vulnerable packages used (flag if detectable). |
-| **HTTPS / transport** | External calls use HTTPS. No mixed content. |
-
-For each check:
-- State what you tested.
-- Report: `✓ [check]` or `✗ [check] — [vulnerability found]`
-- Flag severity: low / medium / **critical**.
-
-**On critical:** Stop and fix immediately before continuing. Do not archive a feature with a critical security issue open.
+Follow all checks defined in the `launchpad-test-security` skill.
+Skip checks that don't apply to this feature's stack.
+**Critical findings block archiving — fix before proceeding.**
 
 ---
 
