@@ -29,7 +29,11 @@ After scanning (whether new or fresh): follow On Skill End rules in `skills/laun
 ### 2. Ask which feature
 Ask: "What feature do you want to work on? Give it a short name (e.g. login, search, dashboard)."
 
-Wait for the answer. Use that as `[feature-name]`.
+Wait for the answer. Follow the elicitation confirm loop in `skills/launchpad-elicit/SKILL.md`:
+- Reflect: "Got it — '[feature-name]'. Does that sound right, or want a different name?"
+- Wait for confirmation before doing anything else.
+
+Use the confirmed name as `[feature-name]`.
 
 ### 3. Check if feature already exists
 - If `.launchpad/features/[feature-name]/REFERENCE.md` exists:
@@ -40,8 +44,10 @@ Wait for the answer. Use that as `[feature-name]`.
 - If missing: continue to step 4.
 
 ### 4. Create feature directory
-Create `.launchpad/features/[feature-name]/` if it does not exist.
-Initialize STATE.md by following `skills/launchpad-state/SKILL.md` → "Initializing STATE.md".
+Ask: "Ready to start building the brief for '[feature-name]'? I'll create a folder and we'll go through a few questions."
+
+- Yes → create `.launchpad/features/[feature-name]/`, initialize STATE.md following `skills/launchpad-state/SKILL.md` → "Initializing STATE.md".
+- No → "No problem. Come back when you're ready."  Stop.
 
 ### 5. Ask questions — one per template section
 Open `templates/REFERENCE.md`. Read every section heading.
