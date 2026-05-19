@@ -4,9 +4,14 @@ ASDLC workflow for non-developers. Guided conversations — no prompts to write,
 
 ## Install
 
+Two steps — run these in your terminal:
+
 ```bash
-claude plugin install --scope user Formartha/launchpad
+claude plugin marketplace add Formartha/launchpad
+claude plugin install --scope user launchpad@launchpad
 ```
+
+Then restart Claude Code. Type `/brain` to start.
 
 ## How it works
 

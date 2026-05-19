@@ -1,0 +1,10 @@
+{
+  "name": "launchpad",
+  "description": "ASDLC workflow for non-developers. Brain → Architect → Implement → Test.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Formartha"
+  },
+  "homepage": "https://github.com/Formartha/launchpad",
+  "license": "MIT"
+}
