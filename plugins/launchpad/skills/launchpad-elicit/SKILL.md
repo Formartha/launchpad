@@ -1,96 +1,96 @@
 ---
 name: launchpad-elicit
-description: "Shared elicitation rules and modalities. Every skill references this for how to ask questions, handle answers, and confirm understanding. Never invoked directly."
+description: "Shared elicitation rules and structures. Defines Free-flow (Q&A with user) and Group (persona team brainstorm). Never invoked directly."
 ---
 
 # Elicitation Rules
 
-Not a standalone skill. Shared protocol every skill must follow when collecting input from the user.
+Not a standalone skill. Every skill references this when collecting feature context.
 
 ---
 
-## Core Protocol (applies to all modalities)
+## Structure 1: Free-flow
+
+User-driven. Brain asks, user answers. Best when the user has a clear idea and wants to articulate it.
+
+### Core Protocol
 
 **Ask:** One thing at a time. Plain language. No jargon. Match the user's tone.
 
-**Receive:** After the user responds:
-1. Reflect — "Got it — [summary of what they said]."
+**Receive:** After each answer:
+1. Reflect — "Got it — [summary]."
 2. Confirm — "Does that capture it, or anything to adjust?"
-3. Branch: confirmed → move on. Adjustment → reflect again, confirm again. Repeat until agreed.
+3. Confirmed → move on. Adjustment → reflect again, confirm. Repeat until agreed.
 
-**Unknowns:** User says "I don't know" or leaves blank → accept it, mark section "to be defined", move on.
-
-**Ambiguity:** Pick the most likely reading, state it in the reflection, let confirm catch misreads.
-
-**External sources:** URL / image / doc / screenshot → read it, extract what's relevant, fold into reflection, confirm as normal.
-
+**Unknowns:** Accept "I don't know" → mark as "to be defined", move on.
+**Ambiguity:** Pick most likely reading, state it in reflection, confirm catches misreads.
 **Tone:** Encouraging. Never critical. Never "that's not enough." Work with what you have.
 
----
+### Modalities (Free-flow only)
 
-## Modalities
+Each section of REFERENCE.md has a default modality. Skills apply these when running Free-flow.
 
-Each modality is a named strategy. Skills choose which one fits each section or moment.
+| Section | Modality | How |
+|---|---|---|
+| What does it do? | **Open** | Plain open question. Wait. Don't guide. |
+| Who uses it? | **Persona** | Ask about the person — who they are, what they know when they arrive. |
+| How should it work? | **Scenario** | "Walk me through it — what happens from the moment someone opens it?" |
+| What's out of scope? | **Devil's Advocate** | Propose a failure or edge case. Ask if it applies or is out of scope. |
+| Notes | **Open** | Catch-all. Anything else? |
 
----
-
-### Modality: Open
-**Use when:** Topic is broad, user needs space to think.
-**How:** Ask the section heading as a plain open question. Wait. Do not guide.
-**Example:** "What does this feature do?"
-
----
-
-### Modality: Scenario
-**Use when:** Understanding how something works step by step.
-**How:** Ask the user to walk through it as if it's happening right now.
-**Example:** "Walk me through it — what happens from the moment someone opens it?"
+**Additional modalities available:**
+- **Ladder** — after reflecting, ask one "why" follow-up to surface real motivation. Use once only.
+- **Priority** — "If you could only ship one of these, which matters most?" Use when list gets long.
+- **Confirm Only** — skip question, go straight to reflection. Use when answer already known from prior context.
 
 ---
 
-### Modality: Ladder
-**Use when:** An answer feels surface-level and the real motivation matters.
-**How:** After reflecting, ask one "why" or "what for" follow-up. Do it once, not repeatedly.
-**Example:** "Got it — [summary]. What's the main reason that matters to you?"
+## Structure 2: Group
 
----
+Persona-driven. A virtual team brainstorms the feature together. User watches. No input required.
 
-### Modality: Devil's Advocate
-**Use when:** Capturing what should NOT happen, edge cases, or out-of-scope limits.
-**How:** Challenge a stated assumption gently. Propose a failure or edge case, ask if it applies.
-**Example:** "What if a user does X — should the feature handle that, or is that out of scope?"
+Best when the user has a rough idea but doesn't know how to articulate it, or wants to see it explored before committing to answers.
 
----
+### The Team
 
-### Modality: Persona
-**Use when:** Identifying who the user is and what they know or need.
-**How:** Ask about the person, not the feature. Push toward a concrete type.
-**Example:** "Who's the person using this? What do they already know when they arrive?"
+Each persona has a fixed perspective. They speak to each other, not to the user.
 
----
-
-### Modality: Priority
-**Use when:** User has listed multiple things and they can't all be equal.
-**How:** Ask them to pick one or rank. Keep it simple — one choice.
-**Example:** "If you could only ship one of these, which one matters most?"
-
----
-
-### Modality: Confirm Only
-**Use when:** Information already exists (e.g. from free-form input or external source) and only needs validation.
-**How:** Skip the opening question. State what you understood, ask if it's right.
-**Example:** "From what you shared, it sounds like [summary]. Is that accurate?"
-
----
-
-## Modality Assignment per REFERENCE.md Section
-
-Skills use these defaults unless context suggests otherwise:
-
-| Section | Default Modality |
+| Persona | Focus |
 |---|---|
-| What does it do? | Open |
-| Who uses it? | Persona |
-| How should it work? | Scenario |
-| What's out of scope? | Devil's Advocate |
-| Notes | Open |
+| **PM** | User value, business goal, priorities, success metrics |
+| **Designer** | User journey, UX edge cases, how it feels to use |
+| **Tech Lead** | Feasibility, constraints, what's hard, what's risky |
+| **QA** | What could go wrong, what's out of scope, failure scenarios |
+| **User** | End-user voice — needs, frustrations, what they actually want |
+
+### How to Run Group Mode
+
+1. Announce the team: "I'll have the team think this through. You can watch — jump in anytime."
+2. Run 2–3 rounds of discussion between personas. Each round surfaces different aspects:
+   - Round 1: What are we building and for whom? (PM + User)
+   - Round 2: How does it work, what could go wrong? (Designer + Tech Lead + QA)
+   - Round 3: What are the limits, what's the priority? (All)
+3. Keep each persona's lines short and direct. No long monologues.
+4. After each round, pause and ask the user: "Anything to add or correct before we continue?"
+5. After all rounds, summarize what the team agreed on.
+6. Map the summary onto `templates/REFERENCE.md` sections.
+7. Show the filled brief to the user and confirm: "Does this capture what the team worked out?"
+
+### Persona Voice Examples
+
+**PM:** "The core value here is X. Who's the primary user — someone technical or not?"
+**Designer:** "If I'm the user, the first thing I'd want to see is... what happens if I get it wrong?"
+**Tech Lead:** "That's doable, but X might be tricky. Are we constrained by Y?"
+**QA:** "What if the user does Z? Is that in scope or should we explicitly block it?"
+**User:** "Honestly I just want it to work without thinking. Keep it simple."
+
+---
+
+## External Sources (both structures)
+
+At any point the user can share: URL, image, screenshot, document, existing code.
+
+- Read or view it immediately.
+- Extract what's relevant to the current section or discussion.
+- Fold it into the reflection (Free-flow) or the team's discussion (Group).
+- Confirm with user before using it.

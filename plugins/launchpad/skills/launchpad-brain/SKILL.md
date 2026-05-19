@@ -64,28 +64,28 @@ Use the ask tool: "Ready to start the brief for '[feature-name]'?" → Yes / Not
 - Yes → create `.launchpad/features/[feature-name]/`, initialize STATE.md following `skills/launchpad-state/SKILL.md` → "Initializing STATE.md".
 - Not yet → "No problem. Come back when you're ready." Stop.
 
-### 5. Elicitation mode
+### 5. Elicitation structure
 Use the ask tool to present the choice:
 
-"How would you like to build the brief?"
-→ Brainstorm with me (guided, one question at a time)
-→ Describe it yourself (free-form, I'll structure it)
+"How would you like to work through '[feature-name]'?"
+→ Q&A — I'll ask you questions, you answer
+→ Team brainstorm — a virtual team thinks it through, you watch and can jump in anytime
 
-- Brainstorm → continue to step 6a.
-- Describe it yourself → continue to step 6b.
+- Q&A → continue to step 6a.
+- Team brainstorm → continue to step 6b.
 
-### 6a. Guided Q&A
+### 6a. Free-flow Q&A
 Open `templates/REFERENCE.md`. Read every section heading.
 
 For each section:
-- Look up the assigned modality in `skills/launchpad-elicit/SKILL.md` → "Modality Assignment per REFERENCE.md Section".
-- Apply that modality. Follow the core protocol (reflect, confirm, adjust) throughout.
+- Look up the assigned modality in `skills/launchpad-elicit/SKILL.md` → Structure 1: Free-flow → Modalities table.
+- Apply that modality. Follow the core protocol throughout.
 - Do not add constraints or format hints. User writes freely.
 - Do not number questions or reveal how many there are.
 
-### 6b. Free-form
-Ask: "Tell me about '[feature-name]' in your own words — whatever comes to mind."
-Wait. Accept everything. Map what was said onto sections in `templates/REFERENCE.md`. Leave blanks where not covered.
+### 6b. Group — Persona Team Brainstorm
+Follow Structure 2: Group in `skills/launchpad-elicit/SKILL.md` exactly.
+Run the team discussion. Pause for user input after each round. Map output to `templates/REFERENCE.md`.
 
 ### 7. External sources
 Use the ask tool: "Anything else to add before I write the brief?" → Yes, I have something / No, we're good.
