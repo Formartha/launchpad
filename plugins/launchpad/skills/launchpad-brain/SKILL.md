@@ -34,12 +34,12 @@ Wait for the answer. Use that as `[feature-name]`.
   - Show the current content.
   - Ask: "This feature already has a brief. Want to update any answers?"
   - Yes → go through only the questions to change, then rewrite REFERENCE.md.
-  - No → skip to Orchestrator step.
+  - No → skip to State step.
 - If missing: continue to step 4.
 
 ### 4. Create feature directory
 Create `.launchpad/features/[feature-name]/` if it does not exist.
-Initialize STATE.md by following `skills/launchpad-orchestrator/SKILL.md` → "Initializing STATE.md".
+Initialize STATE.md by following `skills/launchpad-state/SKILL.md` → "Initializing STATE.md".
 
 ### 5. Ask questions — one per template section
 Open `templates/REFERENCE.md`. Read every section heading.
@@ -63,8 +63,8 @@ Ask: "Before we wrap up — is there anything else you'd like to add? A website,
 ### 7. Write REFERENCE.md
 Using `templates/REFERENCE.md` as structure, fill each section with the user's answers and any external context gathered. Replace `{{feature-name}}`. Save to `.launchpad/features/[feature-name]/REFERENCE.md`.
 
-### 8. Orchestrator — end
-Follow On Skill End rules in `skills/launchpad-orchestrator/SKILL.md`. Mark `brain` complete in STATE.md.
+### 8. State — end
+Follow On Skill End rules in `skills/launchpad-state/SKILL.md`. Mark `brain` complete in STATE.md.
 
 ### 9. Close
 "Your feature brief is ready. Want me to start designing the architecture now, or would you prefer to review it first?"

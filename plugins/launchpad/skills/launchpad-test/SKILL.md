@@ -12,8 +12,8 @@ Write and run tests for each scenario in FEATURE.md. Report what passed and what
 ### 1. Ask which feature
 Ask: "Which feature are we testing?" Wait for the answer. Use that as `[feature-name]`.
 
-### 2. Orchestrator — start
-Follow On Skill Start rules in `skills/launchpad-orchestrator/SKILL.md`. Verify `implement` phase is complete.
+### 2. State — start
+Follow On Skill Start rules in `skills/launchpad-state/SKILL.md`. Verify `implement` phase is complete.
 If not: stop and tell the user what to run first.
 
 ### 3. Show scenarios
@@ -38,8 +38,8 @@ In `## Test Scenarios`, mark each result:
 - `✓` for passing
 - `✗` for failing (with short note)
 
-### 7. Orchestrator — end
-Follow On Skill End rules in `skills/launchpad-orchestrator/SKILL.md`. Mark `test` complete in STATE.md.
+### 7. State — end
+Follow On Skill End rules in `skills/launchpad-state/SKILL.md`. Mark `test` complete in STATE.md.
 
 ### 8. Offer to archive
 Ask: "All done with '[feature-name]'. Want to mark it complete and archive it?"

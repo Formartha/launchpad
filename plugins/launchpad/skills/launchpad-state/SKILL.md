@@ -1,9 +1,9 @@
 ---
-name: launchpad-orchestrator
-description: "Internal rules for reading and writing STATE.md. Every skill follows these at start and end. Never invoked directly by the user."
+name: launchpad-state
+description: "Shared rules for reading and writing STATE.md. Every skill follows these at start and end. Never invoked directly."
 ---
 
-# Orchestrator Rules
+# State Rules
 
 Not a standalone skill. Shared ruleset every skill must follow at start and end of execution.
 

@@ -12,8 +12,8 @@ Read the feature brief, design a concrete implementation plan, propose it to the
 ### 1. Ask which feature
 Ask: "Which feature are we designing?" Wait for the answer. Use that as `[feature-name]`.
 
-### 2. Orchestrator — start
-Follow On Skill Start rules in `skills/launchpad-orchestrator/SKILL.md`. Verify `brain` phase is complete.
+### 2. State — start
+Follow On Skill Start rules in `skills/launchpad-state/SKILL.md`. Verify `brain` phase is complete.
 If not: stop and tell the user what to run first.
 
 ### 3. Read context silently
@@ -41,8 +41,8 @@ Open `templates/FEATURE.md`. Fill in:
 
 Replace `{{feature-name}}`. Save to `.launchpad/features/[feature-name]/FEATURE.md`.
 
-### 7. Orchestrator — end
-Follow On Skill End rules in `skills/launchpad-orchestrator/SKILL.md`. Mark `architect` complete in STATE.md.
+### 7. State — end
+Follow On Skill End rules in `skills/launchpad-state/SKILL.md`. Mark `architect` complete in STATE.md.
 
 ### 8. Close
 "Architecture is ready. Want me to start building it now, or would you prefer to review first?"

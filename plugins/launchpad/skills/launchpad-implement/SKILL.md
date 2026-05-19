@@ -12,8 +12,8 @@ Build the feature step by step, following FEATURE.md. Narrate each step clearly.
 ### 1. Ask which feature
 Ask: "Which feature are we building?" Wait for the answer. Use that as `[feature-name]`.
 
-### 2. Orchestrator — start
-Follow On Skill Start rules in `skills/launchpad-orchestrator/SKILL.md`. Verify `architect` phase is complete.
+### 2. State — start
+Follow On Skill Start rules in `skills/launchpad-state/SKILL.md`. Verify `architect` phase is complete.
 If not: stop and tell the user what to run first.
 
 ### 3. Show the plan
@@ -29,8 +29,8 @@ Work through each step in order:
 
 Only create files listed in FEATURE.md.
 
-### 5. Orchestrator — end
-Follow On Skill End rules in `skills/launchpad-orchestrator/SKILL.md`. Mark `implement` complete in STATE.md.
+### 5. State — end
+Follow On Skill End rules in `skills/launchpad-state/SKILL.md`. Mark `implement` complete in STATE.md.
 
 ### 6. Close
 "All steps done. Want me to run the tests now, or would you prefer to review the code first?"
