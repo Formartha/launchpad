@@ -52,8 +52,8 @@ Ask: "Ready to start building the brief for '[feature-name]'? I'll create a fold
 ### 5. Ask questions — one per template section
 Open `templates/REFERENCE.md`. Read every section heading.
 
-For each section — follow the elicitation protocol in `skills/launchpad-elicit/SKILL.md`.
-Do not number the questions or reveal how many there are.
+For each section — use the heading as the topic, ask it conversationally. Follow the elicitation protocol in `skills/launchpad-elicit/SKILL.md`.
+Do not add constraints, hints, or format guidance. User writes freely. Do not number questions or reveal how many there are.
 
 ### 6. External sources
 Ask: "Before we wrap up — is there anything else you'd like to add? A website, a screenshot, a document, a design, anything at all."
