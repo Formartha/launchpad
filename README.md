@@ -4,14 +4,15 @@ ASDLC workflow for non-developers. Guided conversations — no prompts to write,
 
 ## Install
 
-Two steps — run these in your terminal:
+Run these inside Claude Code:
 
-```bash
-claude plugin marketplace add Formartha/launchpad
-claude plugin install --scope user launchpad@launchpad
+```
+/plugin marketplace add Formartha/launchpad
+/plugin install launchpad@launchpad
+/reload-plugins
 ```
 
-Then restart Claude Code. Type `/brain` to start.
+Then type `/brain` to start.
 
 ## How it works
 
@@ -56,7 +57,7 @@ Each skill checks what's been done. If something is missing, it tells you exactl
 
 | Skill | What it does |
 |---|---|
-| `/brain` | Entry point. Scans project, asks 5 questions, writes REFERENCE.md |
+| `/brain` | Entry point. Scans project, guides Q&A from template, writes REFERENCE.md |
 | `/architect` | Proposes a design, writes FEATURE.md |
 | `/implement` | Builds the feature step by step |
 | `/test` | Tests all scenarios, archives when done |
