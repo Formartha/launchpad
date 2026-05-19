@@ -54,11 +54,17 @@ For each section:
 
 Do not number the questions or reveal how many there are.
 
-### 6. Write REFERENCE.md
-Using `templates/REFERENCE.md` as structure, fill each section with the user's answers. Replace `{{feature-name}}`. Save to `.launchpad/features/[feature-name]/REFERENCE.md`.
+### 6. External sources
+Ask: "Before we wrap up — is there anything else you'd like to add? A website, a screenshot, a document, a design, anything at all."
 
-### 7. Orchestrator — end
+- If yes: read or view what they share. Extract relevant context and incorporate it into the appropriate sections.
+- If no: continue.
+
+### 7. Write REFERENCE.md
+Using `templates/REFERENCE.md` as structure, fill each section with the user's answers and any external context gathered. Replace `{{feature-name}}`. Save to `.launchpad/features/[feature-name]/REFERENCE.md`.
+
+### 8. Orchestrator — end
 Follow On Skill End rules in `skills/launchpad-orchestrator/SKILL.md`. Mark `brain` complete in STATE.md.
 
-### 8. Close
+### 9. Close
 "Your feature brief is ready. Run `/launchpad-architect` when you want to design how it works."
