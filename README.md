@@ -1,5 +1,7 @@
 # Launchpad
 
+<img src="launchpad.jpg" alt="Launchpad" width="180" />
+
 Build your features in a guided, step-by-step flow. No prompts to write, no commands to memorize.
 
 ## Install
