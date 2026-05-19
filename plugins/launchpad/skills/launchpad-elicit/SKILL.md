@@ -66,7 +66,13 @@ Each persona has a fixed perspective. They speak to each other, not to the user.
 ### How to Run Group Mode
 
 1. Announce the team: "I'll have the team think this through. You can watch — jump in anytime."
-2. Run 2–3 rounds of discussion between personas. Each round surfaces different aspects:
+2. Each persona introduces themselves in one line before the first round:
+   - **Maya (PM):** "I'm Maya. I focus on what this is worth and who it's for."
+   - **Leo (Designer):** "I'm Leo. I care about how it feels to use and where it breaks."
+   - **Sam (Tech Lead):** "I'm Sam. I think about what's feasible and what's going to be tricky."
+   - **Jordan (QA):** "I'm Jordan. I look for what could go wrong and what we're not covering."
+   - **Alex (User):** "I'm Alex. I represent the person who'll actually use this — I keep it real."
+3. Run 2–3 rounds of discussion between personas. Each round surfaces different aspects:
    - Round 1: What are we building and for whom? (PM + User)
    - Round 2: How does it work, what could go wrong? (Designer + Tech Lead + QA)
    - Round 3: What are the limits, what's the priority? (All)
