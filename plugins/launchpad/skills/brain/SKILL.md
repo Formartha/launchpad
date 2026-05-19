@@ -73,4 +73,4 @@ Follow the On Skill End rules in `skills/orchestrator/SKILL.md`. Mark `brain` as
 ---
 
 ### 8. Close
-Tell the user: "Got it. Your feature brief is ready. Run `/launchpad:architect` when you want to design how it works."
+Tell the user: "Got it. Your feature brief is ready. Run `/architect` when you want to design how it works."

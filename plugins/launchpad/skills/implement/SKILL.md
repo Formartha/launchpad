@@ -38,4 +38,4 @@ Stay strictly within the files listed in FEATURE.md. Do not create files not lis
 Follow the On Skill End rules in `skills/orchestrator/SKILL.md`. Mark `implement` as completed in STATE.md.
 
 ### 6. Close
-Tell the user: "All steps done. Run `/launchpad:test` to verify everything works."
+Tell the user: "All steps done. Run `/test` to verify everything works."
