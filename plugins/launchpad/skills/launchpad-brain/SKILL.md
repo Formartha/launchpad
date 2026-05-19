@@ -44,16 +44,27 @@ Use the confirmed name as `[feature-name]`.
 - If missing: continue to step 4.
 
 ### 4. Create feature directory
-Ask: "Ready to start building the brief for '[feature-name]'? I'll create a folder and we'll go through a few questions."
+Ask: "Ready to start building the brief for '[feature-name]'? I'll create a folder and we'll go through the brief."
 
 - Yes → create `.launchpad/features/[feature-name]/`, initialize STATE.md following `skills/launchpad-state/SKILL.md` → "Initializing STATE.md".
-- No → "No problem. Come back when you're ready."  Stop.
+- No → "No problem. Come back when you're ready." Stop.
 
-### 5. Ask questions — one per template section
+### 5. Elicitation mode
+Ask: "How would you like to build the brief? I can guide you through it question by question, or you can just describe the feature in your own words and I'll structure it."
+
+- Guided → continue to step 6a.
+- Free-form → continue to step 6b.
+
+### 6a. Guided Q&A
 Open `templates/REFERENCE.md`. Read every section heading.
 
 For each section — use the heading as the topic, ask it conversationally. Follow the elicitation protocol in `skills/launchpad-elicit/SKILL.md`.
 Do not add constraints, hints, or format guidance. User writes freely. Do not number questions or reveal how many there are.
+
+### 6b. Free-form
+Ask: "Tell me about '[feature-name]' in your own words — whatever comes to mind."
+Wait for the response. Accept everything. Do not redirect or prompt for more structure.
+Then map what was said onto the sections in `templates/REFERENCE.md` as best you can. Leave sections blank if not covered.
 
 ### 6. External sources
 Ask: "Before we wrap up — is there anything else you'd like to add? A website, a screenshot, a document, a design, anything at all."
