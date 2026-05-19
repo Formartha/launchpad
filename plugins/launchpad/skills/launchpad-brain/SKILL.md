@@ -1,5 +1,5 @@
 ---
-name: brain
+name: launchpad-brain
 description: "Entry point for any new feature. Scans the project if needed, then guides the user through a short Q&A to define the feature brief (REFERENCE.md)."
 ---
 
@@ -73,4 +73,4 @@ Follow the On Skill End rules in `skills/orchestrator/SKILL.md`. Mark `brain` as
 ---
 
 ### 8. Close
-Tell the user: "Got it. Your feature brief is ready. Run `/architect` when you want to design how it works."
+Tell the user: "Got it. Your feature brief is ready. Run `/launchpad-architect` when you want to design how it works."

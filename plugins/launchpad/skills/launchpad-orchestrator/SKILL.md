@@ -1,5 +1,5 @@
 ---
-name: orchestrator
+name: launchpad-orchestrator
 description: "Internal rules for reading and writing STATE.md. Every skill follows these rules at start and end. Never invoked directly by the user."
 ---
 
@@ -22,17 +22,17 @@ Each phase must be completed in order. No skipping.
 ## On Skill Start: Read STATE.md
 
 1. Check if `.launchpad/features/[feature]/STATE.md` exists.
-   - If not: this is the first skill run for this feature. Only `brain` is allowed to initialize a new feature. If a different skill is running, stop and say: "This feature has not been set up yet. Run `/brain` first."
+   - If not: this is the first skill run for this feature. Only `brain` is allowed to initialize a new feature. If a different skill is running, stop and say: "This feature has not been set up yet. Run `/launchpad-brain` first."
 2. Read the `## Current Phase` value.
 3. Check the phase is correct for the skill about to run. Allowed transitions:
-   - `discover` phase → only `/brain` may proceed next
-   - `brain` phase → only `/architect` may proceed next
-   - `architect` phase → only `/implement` may proceed next
-   - `implement` phase → only `/test` may proceed next
-   - `test` phase → only `/done` may proceed next
+   - `discover` phase → only `/launchpad-brain` may proceed next
+   - `brain` phase → only `/launchpad-architect` may proceed next
+   - `architect` phase → only `/launchpad-implement` may proceed next
+   - `implement` phase → only `/launchpad-test` may proceed next
+   - `test` phase → only `/launchpad-done` may proceed next
    - `done` phase → feature is complete, no further skills allowed
 4. If the skill is not allowed: stop immediately and tell the user exactly which skill to run next.
-   Example: "The 'login' feature is in the **brain** phase. Run `/architect` next."
+   Example: "The 'login' feature is in the **brain** phase. Run `/launchpad-architect` next."
 
 ---
 
@@ -52,7 +52,7 @@ After the skill successfully completes its work:
 
 ## Initializing STATE.md (brain only)
 
-When `/brain` starts a new feature:
+When `/launchpad-brain` starts a new feature:
 
 1. Copy `templates/STATE.md` exactly — do not change the structure.
 2. Replace `{{feature-name}}` with the actual feature name.

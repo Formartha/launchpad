@@ -12,24 +12,24 @@ Run these inside Claude Code:
 /reload-plugins
 ```
 
-Then type `/brain` to start.
+Then type `/launchpad-brain` to start.
 
 ## How it works
 
 Each feature moves through 4 phases. Every phase is a guided conversation — the skill asks, you answer.
 
 ```
-/brain           start here → scans project + defines feature → REFERENCE.md
-/architect  design a solution                             → FEATURE.md
-/implement  build it                                     → code in your project
-/test       verify it works + archive when done          → tests
+/launchpad-brain      start here → scans project + defines feature → REFERENCE.md
+/launchpad-architect  design a solution                             → FEATURE.md
+/launchpad-implement  build it                                     → code in your project
+/launchpad-test       verify it works + archive when done          → tests
 ```
 
 ## Usage
 
 **Start anything:**
 ```
-/brain
+/launchpad-brain
 ```
 Brain handles everything first — scans your project, then asks what you want to build.
 
@@ -57,7 +57,7 @@ Each skill checks what's been done. If something is missing, it tells you exactl
 
 | Skill | What it does |
 |---|---|
-| `/brain` | Entry point. Scans project, guides Q&A from template, writes REFERENCE.md |
-| `/architect` | Proposes a design, writes FEATURE.md |
-| `/implement` | Builds the feature step by step |
-| `/test` | Tests all scenarios, archives when done |
+| `/launchpad-brain` | Entry point. Scans project, guides Q&A from template, writes REFERENCE.md |
+| `/launchpad-architect` | Proposes a design, writes FEATURE.md |
+| `/launchpad-implement` | Builds the feature step by step |
+| `/launchpad-test` | Tests all scenarios, archives when done |

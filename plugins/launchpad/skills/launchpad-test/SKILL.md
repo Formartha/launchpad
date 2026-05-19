@@ -1,5 +1,5 @@
 ---
-name: test
+name: launchpad-test
 description: "Tests the implemented feature against the scenarios defined in FEATURE.md. Reports results, offers to fix failures, and offers to archive the feature when complete."
 ---
 
