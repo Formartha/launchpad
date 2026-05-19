@@ -1,6 +1,8 @@
 ---
 name: launchpad-elicit
 description: "Shared elicitation rules and structures. Defines Free-flow (Q&A with user) and Group (persona team brainstorm). Never invoked directly."
+disable-model-invocation: true
+user-invocable: false
 ---
 
 # Elicitation Rules

@@ -1,6 +1,8 @@
 ---
 name: launchpad-state
 description: "Shared rules for reading and writing STATE.md. Every skill follows these at start and end. Never invoked directly."
+disable-model-invocation: true
+user-invocable: false
 ---
 
 # State Rules
