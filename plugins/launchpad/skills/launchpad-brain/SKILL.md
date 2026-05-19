@@ -50,10 +50,10 @@ Ask: "Ready to start building the brief for '[feature-name]'? I'll create a fold
 - No → "No problem. Come back when you're ready." Stop.
 
 ### 5. Elicitation mode
-Ask: "How would you like to build the brief? I can guide you through it question by question, or you can just describe the feature in your own words and I'll structure it."
+Ask: "How would you like to work through this? I can brainstorm it with you — thinking out loud together, one question at a time — or you can just describe the feature however you like and I'll take it from there."
 
-- Guided → continue to step 6a.
-- Free-form → continue to step 6b.
+- Brainstorm / guided → continue to step 6a.
+- Free-form / describe it myself → continue to step 6b.
 
 ### 6a. Guided Q&A
 Open `templates/REFERENCE.md`. Read every section heading.
