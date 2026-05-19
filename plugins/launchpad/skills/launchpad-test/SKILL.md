@@ -1,11 +1,16 @@
 ---
 name: launchpad-test
 description: "Tests the implemented feature against scenarios in FEATURE.md. Reports results, offers to fix failures, and offers to archive when complete."
+when_to_use: "Use after /launchpad-implement has built the feature and the user is ready to verify it."
+allowed-tools:
+  - Bash
+  - Read
+  - Write
 ---
 
 # Test
 
-Write and run tests for each scenario in FEATURE.md. Report what passed and what failed. Offer to fix failures. Offer to archive when done.
+Write and run tests for each scenario in FEATURE.md. Report pass/fail. Fix failures. Offer archive when done.
 
 ## Steps
 
@@ -13,8 +18,8 @@ Write and run tests for each scenario in FEATURE.md. Report what passed and what
 Ask: "Which feature are we testing?" Wait for the answer. Use that as `[feature-name]`.
 
 ### 2. State — start
-Follow On Skill Start rules in `skills/launchpad-state/SKILL.md`. Verify `implement` phase is complete.
-If not: stop and tell the user what to run first.
+Read `.launchpad/features/[feature-name]/STATE.md`. Verify `implement` phase is complete.
+If not: stop. Tell the user to run `/launchpad-implement` first.
 
 ### 3. Show scenarios
 Read `## Test Scenarios` in `.launchpad/features/[feature-name]/FEATURE.md`.
@@ -29,7 +34,7 @@ For each scenario:
 ### 5. Handle failures
 If a test fails:
 - Explain what failed in plain language.
-- Follow the elicitation protocol in `skills/launchpad-elicit/SKILL.md` to ask: "Want me to fix this, or note it for later review?"
+- Ask: "Want me to fix this, or note it for later review?"
 - Fix → fix, re-run, confirm pass.
 - Note → add note to FEATURE.md under that scenario.
 
@@ -38,16 +43,18 @@ In `## Test Scenarios`, mark each result:
 - `✓` for passing
 - `✗` for failing (with short note)
 
-### 7. State — end
-Follow On Skill End rules in `skills/launchpad-state/SKILL.md`. Mark `test` complete in STATE.md.
+### 7. State — mark test complete
+In `.launchpad/features/[feature-name]/STATE.md`:
+- Update `## Current Phase` → `test`.
+- Update test row: Status → `completed`, Date → today `YYYY-MM-DD`, Summary → pass/fail count and any notable issues.
 
 ### 8. Offer to archive
 Ask: "All done with '[feature-name]'. Want to mark it complete and archive it?"
 
 If yes:
-- Follow On Skill End rules → mark `done` in STATE.md.
+- Update STATE.md: Current Phase → `done`, done row Status → `completed`, Date → today.
 - Create `.launchpad/completed/` if it does not exist.
 - Move `.launchpad/features/[feature-name]/` → `.launchpad/completed/[feature-name]/`.
 - "'[feature-name]' is archived. What are you building next?"
 
-If no: "The feature stays in active features. Come back anytime."
+If no: "Feature stays active. Come back anytime."

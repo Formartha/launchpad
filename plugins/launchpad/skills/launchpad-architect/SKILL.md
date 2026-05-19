@@ -1,6 +1,10 @@
 ---
 name: launchpad-architect
 description: "Designs the technical approach for a feature. Reads the feature brief, elicits technical constraints, proposes an implementation plan, writes FEATURE.md."
+when_to_use: "Use after /launchpad-brain has written REFERENCE.md and the user is ready to decide how to build the feature."
+allowed-tools:
+  - Read
+  - Write
 ---
 
 # Architect
@@ -13,8 +17,8 @@ Technical focus only. Read the brief, understand constraints, propose a concrete
 Ask: "Which feature are we designing?" Wait for the answer. Use that as `[feature-name]`.
 
 ### 2. State — start
-Follow On Skill Start rules in `skills/launchpad-state/SKILL.md`. Verify `brain` phase is complete.
-If not: stop and tell the user what to run first.
+Read `.launchpad/features/[feature-name]/STATE.md`. Verify `brain` phase is complete.
+If not: stop. Tell the user to run `/launchpad-brain` first.
 
 ### 3. Read context silently
 - `.launchpad/PROJECT.md`
@@ -34,8 +38,7 @@ Use the ask tool:
 
 ### 5a. Quick
 Propose one concrete approach in 3–5 sentences. Cover: overall approach, files to create/modify, key dependencies.
-Follow confirm loop from `skills/launchpad-elicit/SKILL.md` — reflect, confirm, adjust until agreed.
-Then → step 6.
+Reflect, confirm, adjust until agreed. Then → step 6.
 
 ### 5b. Options
 Present 2–3 distinct architectural approaches. For each:
@@ -44,20 +47,19 @@ Present 2–3 distinct architectural approaches. For each:
 - One trade-off (what you gain, what you give up)
 
 Use the ask tool: "Which direction fits best?"
-User picks one → confirm → adjust if needed → step 6.
+User picks → confirm → adjust if needed → step 6.
 
 ### 5c. Technical Q&A
-Ask targeted technical questions before proposing. One at a time. Cover:
+Ask targeted technical questions one at a time:
 - Any constraints on stack, libraries, or file structure?
 - Performance or scale requirements?
 - Does anything in the existing codebase need to be preserved or avoided?
 - Any hard deadlines or complexity limits?
 
-After each answer: follow core protocol from `skills/launchpad-elicit/SKILL.md` — reflect, confirm.
-Once all answered: propose one approach based on what was learned → confirm → step 6.
+After each answer: reflect, confirm. Once all answered → propose one approach → confirm → step 6.
 
 ### 6. Write FEATURE.md
-Open `templates/FEATURE.md`. Fill in:
+Using `.launchpad/templates/FEATURE.md` as structure, fill in:
 - **Approach**: the agreed paragraph
 - **Flow**: plain-text arrow diagram, user perspective. Use `→ ↓ ↘ ↙` and short labels. No jargon — a non-developer must follow it. Show branching paths (e.g. success vs. error).
 - **Files**: each file to create or modify, one per line, with a short note
@@ -66,8 +68,10 @@ Open `templates/FEATURE.md`. Fill in:
 
 Replace `{{feature-name}}`. Save to `.launchpad/features/[feature-name]/FEATURE.md`.
 
-### 7. State — end
-Follow On Skill End rules in `skills/launchpad-state/SKILL.md`. Mark `architect` complete in STATE.md.
+### 7. State — mark architect complete
+In `.launchpad/features/[feature-name]/STATE.md`:
+- Update `## Current Phase` → `architect`.
+- Update architect row: Status → `completed`, Date → today `YYYY-MM-DD`, Summary → one sentence of the chosen approach.
 
 ### 8. Close
 Use the ask tool: "Architecture is ready. What's next?"

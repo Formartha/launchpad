@@ -1,6 +1,11 @@
 ---
 name: launchpad-implement
 description: "Builds the feature by following the architecture plan in FEATURE.md. Narrates progress as it works."
+when_to_use: "Use after /launchpad-architect has written FEATURE.md and the user is ready to build."
+allowed-tools:
+  - Bash
+  - Read
+  - Write
 ---
 
 # Implement
@@ -13,13 +18,13 @@ Build the feature step by step, following FEATURE.md. Narrate each step clearly.
 Ask: "Which feature are we building?" Wait for the answer. Use that as `[feature-name]`.
 
 ### 2. State — start
-Follow On Skill Start rules in `skills/launchpad-state/SKILL.md`. Verify `architect` phase is complete.
-If not: stop and tell the user what to run first.
+Read `.launchpad/features/[feature-name]/STATE.md`. Verify `architect` phase is complete.
+If not: stop. Tell the user to run `/launchpad-architect` first.
 
 ### 3. Show the plan
 Read `.launchpad/features/[feature-name]/FEATURE.md`.
 Show the Steps list. Ask: "I'll follow these steps — want to change anything before I start?"
-If yes: follow the elicitation confirm loop in `skills/launchpad-elicit/SKILL.md` — reflect the requested change, confirm, update FEATURE.md.
+If yes: reflect the requested change, confirm, update FEATURE.md.
 
 ### 4. Implement
 Work through each step in order:
@@ -29,11 +34,12 @@ Work through each step in order:
 
 Only create files listed in FEATURE.md.
 
-### 5. State — end
-Follow On Skill End rules in `skills/launchpad-state/SKILL.md`. Mark `implement` complete in STATE.md.
+### 5. State — mark implement complete
+In `.launchpad/features/[feature-name]/STATE.md`:
+- Update `## Current Phase` → `implement`.
+- Update implement row: Status → `completed`, Date → today `YYYY-MM-DD`, Summary → one sentence of what was built.
 
 ### 6. Close
-"All steps done. Want me to run the tests now, or would you prefer to review the code first?"
-
-- Yes / now → continue directly into the `/launchpad-test` skill steps.
-- No / later → "Run `/launchpad-test` when you're ready."
+Use the ask tool: "All steps done. What's next?"
+→ Run tests now (continue into `/launchpad-test`)
+→ Review the code first (stop here)
