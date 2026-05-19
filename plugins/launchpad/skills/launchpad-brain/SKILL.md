@@ -43,8 +43,16 @@ Initialize STATE.md by following `skills/launchpad-orchestrator/SKILL.md` → "I
 
 ### 5. Ask questions — one per template section
 Open `templates/REFERENCE.md`. Read every section heading.
-For each section — ask the user about it, one at a time. Wait for the answer before moving to the next.
-Phrase each question in plain, conversational language. Do not number them or reveal how many there are.
+
+For each section:
+1. Ask the user about it in plain, conversational language.
+2. Wait for the answer.
+3. Reflect it back in one sentence: "Got it — [short summary of what they said]."
+4. Ask: "Does that capture it correctly, or do you want to adjust anything?"
+   - Yes / looks good → move to next section.
+   - No / adjust → let them clarify, reflect again, confirm before moving on.
+
+Do not number the questions or reveal how many there are.
 
 ### 6. Write REFERENCE.md
 Using `templates/REFERENCE.md` as structure, fill each section with the user's answers. Replace `{{feature-name}}`. Save to `.launchpad/features/[feature-name]/REFERENCE.md`.
