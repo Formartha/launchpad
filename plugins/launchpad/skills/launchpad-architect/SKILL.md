@@ -1,11 +1,11 @@
 ---
 name: launchpad-architect
-description: "Designs the technical approach for a feature. Reads the feature brief, proposes an implementation plan, writes FEATURE.md."
+description: "Designs the technical approach for a feature. Reads the feature brief, elicits technical constraints, proposes an implementation plan, writes FEATURE.md."
 ---
 
 # Architect
 
-Read the feature brief, design a concrete implementation plan, propose it to the user, adjust based on feedback, then write FEATURE.md.
+Technical focus only. Read the brief, understand constraints, propose a concrete implementation plan. Not a product conversation — this is about how to build it.
 
 ## Steps
 
@@ -20,16 +20,41 @@ If not: stop and tell the user what to run first.
 - `.launchpad/PROJECT.md`
 - `.launchpad/features/[feature-name]/REFERENCE.md`
 
-### 4. Propose approach
-"Here's how I'd build [feature-name]:" — short summary, 3–5 sentences. Cover:
-- What approach you'll take
-- What files will be created or changed
-- Any dependencies or tools needed
+### 4. Elicitation mode
+Use the ask tool:
 
-Follow the elicitation confirm loop in `skills/launchpad-elicit/SKILL.md` — reflect the approach, confirm, adjust until agreed.
+"How would you like to work through the architecture for '[feature-name]'?"
+→ Quick — I'll propose an approach, you confirm or adjust
+→ Options — I'll show 2–3 approaches with trade-offs, you pick one
+→ Q&A — I'll ask a few technical questions first, then propose
 
-### 5. Adjust if needed
-If the user redirects: update approach, reflect again, confirm. Follow `skills/launchpad-elicit/SKILL.md` throughout.
+- Quick → step 5a
+- Options → step 5b
+- Q&A → step 5c
+
+### 5a. Quick
+Propose one concrete approach in 3–5 sentences. Cover: overall approach, files to create/modify, key dependencies.
+Follow confirm loop from `skills/launchpad-elicit/SKILL.md` — reflect, confirm, adjust until agreed.
+Then → step 6.
+
+### 5b. Options
+Present 2–3 distinct architectural approaches. For each:
+- Name it (one word or short phrase)
+- Describe it in 2 sentences
+- One trade-off (what you gain, what you give up)
+
+Use the ask tool: "Which direction fits best?"
+User picks one → confirm → adjust if needed → step 6.
+
+### 5c. Technical Q&A
+Ask targeted technical questions before proposing. One at a time. Cover:
+- Any constraints on stack, libraries, or file structure?
+- Performance or scale requirements?
+- Does anything in the existing codebase need to be preserved or avoided?
+- Any hard deadlines or complexity limits?
+
+After each answer: follow core protocol from `skills/launchpad-elicit/SKILL.md` — reflect, confirm.
+Once all answered: propose one approach based on what was learned → confirm → step 6.
 
 ### 6. Write FEATURE.md
 Open `templates/FEATURE.md`. Fill in:
@@ -45,7 +70,6 @@ Replace `{{feature-name}}`. Save to `.launchpad/features/[feature-name]/FEATURE.
 Follow On Skill End rules in `skills/launchpad-state/SKILL.md`. Mark `architect` complete in STATE.md.
 
 ### 8. Close
-"Architecture is ready. Want me to start building it now, or would you prefer to review first?"
-
-- Yes / now → continue directly into the `/launchpad-implement` skill steps.
-- No / later → "Run `/launchpad-implement` when you're ready."
+Use the ask tool: "Architecture is ready. What's next?"
+→ Start building now (continue into `/launchpad-implement`)
+→ Review the architecture first (stop here)
