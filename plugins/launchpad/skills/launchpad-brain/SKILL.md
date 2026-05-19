@@ -24,6 +24,8 @@ If updated: tell the user in one line what was found.
 Example: "Scanned the project — found a Next.js app with Tailwind. Let's define your feature."
 If fresh: continue silently.
 
+After scanning (whether new or fresh): follow On Skill End rules in `skills/launchpad-state/SKILL.md` to mark `discover` complete in STATE.md. Do this before asking the feature name — discover must be recorded first.
+
 ### 2. Ask which feature
 Ask: "What feature do you want to work on? Give it a short name (e.g. login, search, dashboard)."
 
