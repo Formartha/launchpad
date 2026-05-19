@@ -78,8 +78,8 @@ Use the ask tool to present the choice:
 Open `templates/REFERENCE.md`. Read every section heading.
 
 For each section:
-- Use the ask tool to ask about it conversationally.
-- Follow the full elicitation protocol in `skills/launchpad-elicit/SKILL.md` — reflect, confirm, adjust.
+- Look up the assigned modality in `skills/launchpad-elicit/SKILL.md` → "Modality Assignment per REFERENCE.md Section".
+- Apply that modality. Follow the core protocol (reflect, confirm, adjust) throughout.
 - Do not add constraints or format hints. User writes freely.
 - Do not number questions or reveal how many there are.
 
