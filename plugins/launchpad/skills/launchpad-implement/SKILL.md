@@ -5,37 +5,32 @@ description: "Builds the feature by following the architecture plan in FEATURE.m
 
 # Implement
 
-Build the feature step by step, following FEATURE.md. Narrate progress clearly so the user knows what is happening.
-
----
+Build the feature step by step, following FEATURE.md. Narrate each step clearly.
 
 ## Steps
 
 ### 1. Ask which feature
-Ask: "Which feature are we building?"
-
-Wait for the answer. Use that as `[feature-name]`.
+Ask: "Which feature are we building?" Wait for the answer. Use that as `[feature-name]`.
 
 ### 2. Orchestrator — start
-Follow the On Skill Start rules in `skills/orchestrator/SKILL.md`. Verify `architect` phase is complete.
+Follow On Skill Start rules in `skills/launchpad-orchestrator/SKILL.md`. Verify `architect` phase is complete.
 If not: stop and tell the user what to run first.
 
 ### 3. Show the plan
 Read `.launchpad/features/[feature-name]/FEATURE.md`.
-Show the Steps list to the user and ask: "I'll follow these steps — want to change anything before I start?"
-
-If the user wants changes: update FEATURE.md steps accordingly, then confirm.
+Show the Steps list and ask: "I'll follow these steps — want to change anything before I start?"
+If yes: update FEATURE.md steps, then confirm.
 
 ### 4. Implement
-Work through each step in order. For each step:
+Work through each step in order:
 - Say what you are doing in plain language before doing it.
 - Write the code.
 - Say "Done." when the step is complete.
 
-Stay strictly within the files listed in FEATURE.md. Do not create files not listed there.
+Only create files listed in FEATURE.md.
 
 ### 5. Orchestrator — end
-Follow the On Skill End rules in `skills/orchestrator/SKILL.md`. Mark `implement` as completed in STATE.md.
+Follow On Skill End rules in `skills/launchpad-orchestrator/SKILL.md`. Mark `implement` complete in STATE.md.
 
 ### 6. Close
-Tell the user: "All steps done. Run `/launchpad-test` to verify everything works."
+"All steps done. Run `/launchpad-test` to verify everything works."
