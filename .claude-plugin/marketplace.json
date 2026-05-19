@@ -8,7 +8,7 @@
     {
       "name": "launchpad",
       "source": "./plugins/launchpad",
-      "description": "ASDLC workflow for non-developers. Brain → Architect → Implement → Test.",
+      "description": "Build features in a guided flow. Brain → Architect → Implement → Test.",
       "version": "0.1.0",
       "author": {
         "name": "Formartha"

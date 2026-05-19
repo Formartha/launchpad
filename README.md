@@ -1,6 +1,6 @@
 # Launchpad
 
-ASDLC workflow for non-developers. Guided conversations — no prompts to write, no commands to memorize.
+Build your features in a guided, step-by-step flow. No prompts to write, no commands to memorize.
 
 ## Install
 
