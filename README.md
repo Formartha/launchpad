@@ -18,21 +18,21 @@ Then type `/launchpad-brain` to start.
 
 ```mermaid
 flowchart LR
-    A(["/launchpad-brain"]) --> B[Scan project\n+ Q&A → REFERENCE.md]
+    A(["/launchpad-brain"]) --> B[Scan + Q&A]
     B --> C{continue?}
     C -- yes --> D(["/launchpad-architect"])
     C -- no --> C2([resume later])
-    D --> E[Design → FEATURE.md]
+    D --> E[Design]
     E --> F{continue?}
     F -- yes --> G(["/launchpad-implement"])
     F -- no --> F2([resume later])
-    G --> H[Build code]
+    G --> H[Build]
     H --> I{continue?}
     I -- yes --> J(["/launchpad-test"])
     I -- no --> I2([resume later])
-    J --> K[Run tests]
+    J --> K[Test]
     K --> L{archive?}
-    L -- yes --> M([completed ✓])
+    L -- yes --> M([done])
     L -- no --> N([stays active])
 
     style A fill:#4A90D9,color:#fff
