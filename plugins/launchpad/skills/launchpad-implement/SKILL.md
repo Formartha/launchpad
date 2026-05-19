@@ -18,8 +18,8 @@ If not: stop and tell the user what to run first.
 
 ### 3. Show the plan
 Read `.launchpad/features/[feature-name]/FEATURE.md`.
-Show the Steps list and ask: "I'll follow these steps — want to change anything before I start?"
-If yes: update FEATURE.md steps, then confirm.
+Show the Steps list. Ask: "I'll follow these steps — want to change anything before I start?"
+If yes: follow the elicitation confirm loop in `skills/launchpad-elicit/SKILL.md` — reflect the requested change, confirm, update FEATURE.md.
 
 ### 4. Implement
 Work through each step in order:

@@ -29,7 +29,7 @@ For each scenario:
 ### 5. Handle failures
 If a test fails:
 - Explain what failed in plain language.
-- Ask: "Want me to fix this, or note it for later review?"
+- Follow the elicitation protocol in `skills/launchpad-elicit/SKILL.md` to ask: "Want me to fix this, or note it for later review?"
 - Fix → fix, re-run, confirm pass.
 - Note → add note to FEATURE.md under that scenario.
 
