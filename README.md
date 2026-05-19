@@ -4,8 +4,8 @@ ASDLC workflow for non-developers. Guided conversations — no prompts to write,
 
 ## Install
 
-```
-/plugin install Formartha/launchpad
+```bash
+claude plugin install --scope user Formartha/launchpad
 ```
 
 ## How it works
