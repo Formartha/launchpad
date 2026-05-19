@@ -17,46 +17,32 @@ Then type `/launchpad-brain` to start.
 ## Flow
 
 ```mermaid
-flowchart TD
-    A(["/launchpad-brain"]) --> B[Scan project\nwrite PROJECT.md]
-    B --> C[Ask: what feature?]
-    C --> D[Q&A per REFERENCE.md template\nreflect · confirm · adjust]
-    D --> E[External sources?\nURL / image / doc]
-    E --> F[Write REFERENCE.md]
-    F --> G{Continue to\narchitect now?}
-    G -- yes --> H(["/launchpad-architect"])
-    G -- no --> WAIT1([Wait — run /launchpad-architect when ready])
-
-    H --> I[Read PROJECT.md + REFERENCE.md]
-    I --> J[Propose approach\nreflect · confirm · adjust]
-    J --> K[Write FEATURE.md\nApproach · Flow · Files · Steps · Tests]
-    K --> L{Continue to\nbuild now?}
-    L -- yes --> M(["/launchpad-implement"])
-    L -- no --> WAIT2([Wait — run /launchpad-implement when ready])
-
-    M --> N[Show Steps list\nconfirm or adjust]
-    N --> O[Build step by step\nnarrate each step]
-    O --> P{Continue to\ntest now?}
-    P -- yes --> Q(["/launchpad-test"])
-    P -- no --> WAIT3([Wait — run /launchpad-test when ready])
-
-    Q --> R[Run test scenarios]
-    R --> S{All pass?}
-    S -- yes --> T{Archive feature?}
-    S -- no --> U[Fix or note each failure]
-    U --> T
-    T -- yes --> V[Move to .launchpad/completed/]
-    T -- no --> WAIT4([Feature stays active])
+flowchart LR
+    A(["/launchpad-brain"]) --> B[Scan project\n+ Q&A → REFERENCE.md]
+    B --> C{continue?}
+    C -- yes --> D(["/launchpad-architect"])
+    C -- no --> C2([resume later])
+    D --> E[Design → FEATURE.md]
+    E --> F{continue?}
+    F -- yes --> G(["/launchpad-implement"])
+    F -- no --> F2([resume later])
+    G --> H[Build code]
+    H --> I{continue?}
+    I -- yes --> J(["/launchpad-test"])
+    I -- no --> I2([resume later])
+    J --> K[Run tests]
+    K --> L{archive?}
+    L -- yes --> M([completed ✓])
+    L -- no --> N([stays active])
 
     style A fill:#4A90D9,color:#fff
-    style H fill:#4A90D9,color:#fff
-    style M fill:#4A90D9,color:#fff
-    style Q fill:#4A90D9,color:#fff
-    style V fill:#27AE60,color:#fff
-    style WAIT1 fill:#888,color:#fff
-    style WAIT2 fill:#888,color:#fff
-    style WAIT3 fill:#888,color:#fff
-    style WAIT4 fill:#888,color:#fff
+    style D fill:#4A90D9,color:#fff
+    style G fill:#4A90D9,color:#fff
+    style J fill:#4A90D9,color:#fff
+    style M fill:#27AE60,color:#fff
+    style C2 fill:#888,color:#fff
+    style F2 fill:#888,color:#fff
+    style I2 fill:#888,color:#fff
 ```
 
 ## What gets created
