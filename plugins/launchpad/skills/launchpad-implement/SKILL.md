@@ -33,4 +33,7 @@ Only create files listed in FEATURE.md.
 Follow On Skill End rules in `skills/launchpad-orchestrator/SKILL.md`. Mark `implement` complete in STATE.md.
 
 ### 6. Close
-"All steps done. Run `/launchpad-test` to verify everything works."
+"All steps done. Want me to run the tests now, or would you prefer to review the code first?"
+
+- Yes / now → continue directly into the `/launchpad-test` skill steps.
+- No / later → "Run `/launchpad-test` when you're ready."

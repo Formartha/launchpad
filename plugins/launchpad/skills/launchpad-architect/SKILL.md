@@ -45,4 +45,7 @@ Replace `{{feature-name}}`. Save to `.launchpad/features/[feature-name]/FEATURE.
 Follow On Skill End rules in `skills/launchpad-orchestrator/SKILL.md`. Mark `architect` complete in STATE.md.
 
 ### 8. Close
-"Architecture is ready. Run `/launchpad-implement` when you want to start building."
+"Architecture is ready. Want me to start building it now, or would you prefer to review first?"
+
+- Yes / now → continue directly into the `/launchpad-implement` skill steps.
+- No / later → "Run `/launchpad-implement` when you're ready."

@@ -67,4 +67,7 @@ Using `templates/REFERENCE.md` as structure, fill each section with the user's a
 Follow On Skill End rules in `skills/launchpad-orchestrator/SKILL.md`. Mark `brain` complete in STATE.md.
 
 ### 9. Close
-"Your feature brief is ready. Run `/launchpad-architect` when you want to design how it works."
+"Your feature brief is ready. Want me to start designing the architecture now, or would you prefer to review it first?"
+
+- Yes / now → continue directly into the `/launchpad-architect` skill steps without waiting for a command.
+- No / later → "Take your time. Run `/launchpad-architect` when you're ready."
