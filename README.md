@@ -14,39 +14,59 @@ Run these inside Claude Code:
 
 Then type `/launchpad-brain` to start.
 
-## How it works
+## Flow
 
-Each feature moves through 4 phases. Every phase is a guided conversation — the skill asks, you answer.
+```mermaid
+flowchart TD
+    A(["/launchpad-brain"]) --> B[Scan project\nwrite PROJECT.md]
+    B --> C[Ask: what feature?]
+    C --> D[Q&A per REFERENCE.md template\nreflect · confirm · adjust]
+    D --> E[External sources?\nURL / image / doc]
+    E --> F[Write REFERENCE.md]
+    F --> G{Continue to\narchitect now?}
+    G -- yes --> H(["/launchpad-architect"])
+    G -- no --> WAIT1([Wait — run /launchpad-architect when ready])
 
+    H --> I[Read PROJECT.md + REFERENCE.md]
+    I --> J[Propose approach\nreflect · confirm · adjust]
+    J --> K[Write FEATURE.md\nApproach · Flow · Files · Steps · Tests]
+    K --> L{Continue to\nbuild now?}
+    L -- yes --> M(["/launchpad-implement"])
+    L -- no --> WAIT2([Wait — run /launchpad-implement when ready])
+
+    M --> N[Show Steps list\nconfirm or adjust]
+    N --> O[Build step by step\nnarrate each step]
+    O --> P{Continue to\ntest now?}
+    P -- yes --> Q(["/launchpad-test"])
+    P -- no --> WAIT3([Wait — run /launchpad-test when ready])
+
+    Q --> R[Run test scenarios]
+    R --> S{All pass?}
+    S -- yes --> T{Archive feature?}
+    S -- no --> U[Fix or note each failure]
+    U --> T
+    T -- yes --> V[Move to .launchpad/completed/]
+    T -- no --> WAIT4([Feature stays active])
+
+    style A fill:#4A90D9,color:#fff
+    style H fill:#4A90D9,color:#fff
+    style M fill:#4A90D9,color:#fff
+    style Q fill:#4A90D9,color:#fff
+    style V fill:#27AE60,color:#fff
+    style WAIT1 fill:#888,color:#fff
+    style WAIT2 fill:#888,color:#fff
+    style WAIT3 fill:#888,color:#fff
+    style WAIT4 fill:#888,color:#fff
 ```
-/launchpad-brain      start here → scans project + defines feature → REFERENCE.md
-/launchpad-architect  design a solution                             → FEATURE.md
-/launchpad-implement  build it                                     → code in your project
-/launchpad-test       verify it works + archive when done          → tests
-```
-
-## Usage
-
-**Start anything:**
-```
-/launchpad-brain
-```
-Brain handles everything first — scans your project, then asks what you want to build.
-
-**Continue where you left off:**
-Run the same skill again — it picks up from the current state.
-
-**Missing a step?**
-Each skill checks what's been done. If something is missing, it tells you exactly what to run first.
 
 ## What gets created
 
 ```
 .launchpad/
-├── PROJECT.md                  project knowledge base (written by brain)
+├── PROJECT.md                  project knowledge base
 ├── features/
 │   └── [feature-name]/
-│       ├── STATE.md            current phase + history (orchestrator only)
+│       ├── STATE.md            phase tracking (launchpad-state only)
 │       ├── REFERENCE.md        what to build (from your answers)
 │       └── FEATURE.md          how to build it (from architect)
 └── completed/
@@ -57,7 +77,14 @@ Each skill checks what's been done. If something is missing, it tells you exactl
 
 | Skill | What it does |
 |---|---|
-| `/launchpad-brain` | Entry point. Scans project, guides Q&A from template, writes REFERENCE.md |
-| `/launchpad-architect` | Proposes a design, writes FEATURE.md |
+| `/launchpad-brain` | Entry point. Scans project, guides Q&A, writes REFERENCE.md |
+| `/launchpad-architect` | Proposes design, writes FEATURE.md |
 | `/launchpad-implement` | Builds the feature step by step |
 | `/launchpad-test` | Tests all scenarios, archives when done |
+
+## Internal skills (not user-facing)
+
+| Skill | Purpose |
+|---|---|
+| `launchpad-state` | STATE.md lifecycle rules — read/write protocol |
+| `launchpad-elicit` | Shared Q&A protocol — ask, reflect, confirm, adjust |
