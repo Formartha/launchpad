@@ -55,13 +55,13 @@ Best when the user has a rough idea but doesn't know how to articulate it, or wa
 
 Each persona has a fixed perspective. They speak to each other, not to the user.
 
-| Persona | Focus |
-|---|---|
-| **PM** | User value, business goal, priorities, success metrics |
-| **Designer** | User journey, UX edge cases, how it feels to use |
-| **Tech Lead** | Feasibility, constraints, what's hard, what's risky |
-| **QA** | What could go wrong, what's out of scope, failure scenarios |
-| **User** | End-user voice — needs, frustrations, what they actually want |
+| Name | Role | Focus |
+|---|---|---|
+| **Maya** | PM | User value, business goal, priorities, success metrics |
+| **Leo** | Designer | User journey, UX edge cases, how it feels to use |
+| **Sam** | Tech Lead | Feasibility, constraints, what's hard, what's risky |
+| **Jordan** | QA | What could go wrong, what's out of scope, failure scenarios |
+| **Alex** | User | End-user voice — needs, frustrations, what they actually want |
 
 ### How to Run Group Mode
 
@@ -78,11 +78,11 @@ Each persona has a fixed perspective. They speak to each other, not to the user.
 
 ### Persona Voice Examples
 
-**PM:** "The core value here is X. Who's the primary user — someone technical or not?"
-**Designer:** "If I'm the user, the first thing I'd want to see is... what happens if I get it wrong?"
-**Tech Lead:** "That's doable, but X might be tricky. Are we constrained by Y?"
-**QA:** "What if the user does Z? Is that in scope or should we explicitly block it?"
-**User:** "Honestly I just want it to work without thinking. Keep it simple."
+**Maya:** "The core value here is X. Who's the primary user — someone technical or not?"
+**Leo:** "If I'm the user, the first thing I'd want to see is... what happens if I get it wrong?"
+**Sam:** "That's doable, but X might be tricky. Are we constrained by Y?"
+**Jordan:** "What if the user does Z? Is that in scope or should we explicitly block it?"
+**Alex:** "Honestly I just want it to work without thinking. Keep it simple."
 
 ---
 
