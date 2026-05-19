@@ -1,41 +1,36 @@
 ---
 name: launchpad-implement
-description: "Builds the feature by following the architecture plan in FEATURE.md. Narrates progress as it works."
+description: "Builds the feature following FEATURE.md. Narrates progress as it works."
 ---
 
 # Implement
 
-Build the feature step by step, following FEATURE.md. Narrate progress clearly so the user knows what is happening.
-
----
+Build feature step by step per FEATURE.md. Narrate each step clearly.
 
 ## Steps
 
-### 1. Ask which feature
-Ask: "Which feature are we building?"
-
-Wait for the answer. Use that as `[feature-name]`.
+### 1. Ask feature name
+"Which feature are we building?" Wait. Use as `[feature-name]`.
 
 ### 2. Orchestrator — start
-Follow the On Skill Start rules in `skills/orchestrator/SKILL.md`. Verify `architect` phase is complete.
-If not: stop and tell the user what to run first.
+Follow On Skill Start in `skills/launchpad-orchestrator/SKILL.md`. Verify `architect` complete.
+Blocked → tell user what to run first.
 
-### 3. Show the plan
+### 3. Show plan
 Read `.launchpad/features/[feature-name]/FEATURE.md`.
-Show the Steps list to the user and ask: "I'll follow these steps — want to change anything before I start?"
+Show Steps list. "I'll follow these — want to change anything before I start?"
+Changes requested → update FEATURE.md, confirm.
 
-If the user wants changes: update FEATURE.md steps accordingly, then confirm.
+### 4. Build
+Each step in order:
+- Say what you're doing (plain language).
+- Write code.
+- "Done." when step complete.
 
-### 4. Implement
-Work through each step in order. For each step:
-- Say what you are doing in plain language before doing it.
-- Write the code.
-- Say "Done." when the step is complete.
-
-Stay strictly within the files listed in FEATURE.md. Do not create files not listed there.
+Only create files listed in FEATURE.md.
 
 ### 5. Orchestrator — end
-Follow the On Skill End rules in `skills/orchestrator/SKILL.md`. Mark `implement` as completed in STATE.md.
+Follow On Skill End in `skills/launchpad-orchestrator/SKILL.md`. Mark `implement` complete.
 
 ### 6. Close
-Tell the user: "All steps done. Run `/launchpad-test` to verify everything works."
+"All steps done. Run `/launchpad-test` to verify."

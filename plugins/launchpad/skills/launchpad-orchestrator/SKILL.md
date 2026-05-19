@@ -1,13 +1,11 @@
 ---
 name: launchpad-orchestrator
-description: "Internal rules for reading and writing STATE.md. Every skill follows these rules at start and end. Never invoked directly by the user."
+description: "Internal rules for STATE.md. Every skill reads these at start and end. Never invoked directly."
 ---
 
 # Orchestrator Rules
 
-The orchestrator is not a standalone skill. It is a shared ruleset that every skill must follow at the start and end of its execution.
-
----
+Shared ruleset. Not standalone. Every skill follows at start and end.
 
 ## Phase Order
 
@@ -15,46 +13,37 @@ The orchestrator is not a standalone skill. It is a shared ruleset that every sk
 discover → brain → architect → implement → test → done
 ```
 
-Each phase must be completed in order. No skipping.
-
----
+No skipping.
 
 ## On Skill Start: Read STATE.md
 
-1. Check if `.launchpad/features/[feature]/STATE.md` exists.
-   - If not: this is the first skill run for this feature. Only `brain` is allowed to initialize a new feature. If a different skill is running, stop and say: "This feature has not been set up yet. Run `/launchpad-brain` first."
-2. Read the `## Current Phase` value.
-3. Check the phase is correct for the skill about to run. Allowed transitions:
-   - `discover` phase → only `/launchpad-brain` may proceed next
-   - `brain` phase → only `/launchpad-architect` may proceed next
-   - `architect` phase → only `/launchpad-implement` may proceed next
-   - `implement` phase → only `/launchpad-test` may proceed next
-   - `test` phase → only `/launchpad-done` may proceed next
-   - `done` phase → feature is complete, no further skills allowed
-4. If the skill is not allowed: stop immediately and tell the user exactly which skill to run next.
-   Example: "The 'login' feature is in the **brain** phase. Run `/launchpad-architect` next."
-
----
+1. Check `.launchpad/features/[feature]/STATE.md` exists.
+   - Missing → first run. Only `brain` may init. Else stop: "Feature not set up. Run `/launchpad-brain` first."
+2. Read `## Current Phase`.
+3. Verify phase allows this skill. Allowed transitions:
+   - `discover` → `/launchpad-brain` only
+   - `brain` → `/launchpad-architect` only
+   - `architect` → `/launchpad-implement` only
+   - `implement` → `/launchpad-test` only
+   - `test` → done (archive in test skill)
+   - `done` → no further skills
+4. Wrong phase → stop. Tell user exactly what to run.
+   Example: "'login' is in **brain** phase. Run `/launchpad-architect` next."
 
 ## On Skill End: Write STATE.md
 
-After the skill successfully completes its work:
-
 1. Open `.launchpad/features/[feature]/STATE.md`.
-2. Update `## Current Phase` to the phase just completed.
-3. In the `## Phases` table, find the row for the completed phase and update:
+2. Update `## Current Phase` to completed phase.
+3. In `## Phases` table, update completed row:
    - **Status**: `not started` → `completed`
-   - **Date**: today's date in `YYYY-MM-DD` format
-   - **Summary**: one sentence describing what was done or decided in this phase
-4. Do not edit any other row or any other part of the file.
-
----
+   - **Date**: `YYYY-MM-DD`
+   - **Summary**: one sentence — what was done/decided
+4. Edit only that row. Nothing else.
 
 ## Initializing STATE.md (brain only)
 
-When `/launchpad-brain` starts a new feature:
-
-1. Copy `templates/STATE.md` exactly — do not change the structure.
-2. Replace `{{feature-name}}` with the actual feature name.
-3. Leave all rows as `not started` with `—` for date and summary.
+When `/launchpad-brain` starts new feature:
+1. Copy `templates/STATE.md` exactly — no structure changes.
+2. Replace `{{feature-name}}`.
+3. All rows: `not started`, date `—`, summary `—`.
 4. Save to `.launchpad/features/[feature-name]/STATE.md`.
