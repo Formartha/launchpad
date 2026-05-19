@@ -26,10 +26,10 @@ If not: stop and tell the user what to run first.
 - What files will be created or changed
 - Any dependencies or tools needed
 
-Ask: "Does this make sense, or do you want to change anything?"
+Follow the elicitation confirm loop in `skills/launchpad-elicit/SKILL.md` — reflect the approach, confirm, adjust until agreed.
 
 ### 5. Adjust if needed
-If the user redirects: update your approach and confirm again. Repeat until yes.
+If the user redirects: update approach, reflect again, confirm. Follow `skills/launchpad-elicit/SKILL.md` throughout.
 
 ### 6. Write FEATURE.md
 Open `templates/FEATURE.md`. Fill in:

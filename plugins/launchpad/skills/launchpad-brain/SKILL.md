@@ -46,21 +46,13 @@ Initialize STATE.md by following `skills/launchpad-state/SKILL.md` → "Initiali
 ### 5. Ask questions — one per template section
 Open `templates/REFERENCE.md`. Read every section heading.
 
-For each section:
-1. Ask the user about it in plain, conversational language.
-2. Wait for the answer.
-3. Reflect it back in one sentence: "Got it — [short summary of what they said]."
-4. Ask: "Does that capture it correctly, or do you want to adjust anything?"
-   - Yes / looks good → move to next section.
-   - No / adjust → let them clarify, reflect again, confirm before moving on.
-
+For each section — follow the elicitation protocol in `skills/launchpad-elicit/SKILL.md`.
 Do not number the questions or reveal how many there are.
 
 ### 6. External sources
 Ask: "Before we wrap up — is there anything else you'd like to add? A website, a screenshot, a document, a design, anything at all."
 
-- If yes: read or view what they share. Extract relevant context and incorporate it into the appropriate sections.
-- If no: continue.
+Follow the external source rules in `skills/launchpad-elicit/SKILL.md` for anything shared.
 
 ### 7. Write REFERENCE.md
 Using `templates/REFERENCE.md` as structure, fill each section with the user's answers and any external context gathered. Replace `{{feature-name}}`. Save to `.launchpad/features/[feature-name]/REFERENCE.md`.
